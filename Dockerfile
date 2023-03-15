@@ -5,7 +5,8 @@ FROM node:16
 WORKDIR /app
 
 # Copy the server.js file from the local filesystem to the container
-COPY ./server.js .
+COPY lib ./lib
+COPY server.js .
 
 # Install any dependencies needed for the server
 # RUN npm run lint
