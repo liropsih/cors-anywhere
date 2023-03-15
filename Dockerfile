@@ -8,7 +8,7 @@ WORKDIR /app
 COPY ./server.js .
 
 # Install any dependencies needed for the server
-RUN npm lint
+RUN npm run lint
 
 # Set the command to execute when the container starts
 CMD ["node", "server.js"]
