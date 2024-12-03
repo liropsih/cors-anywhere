@@ -43,7 +43,7 @@
     "supertest": "^2.0.1"
   },
   "scripts": {
-    "build": "echo 'Nothing to build'",
+    "build": "mkdir -p public",
     "lint": "eslint .",
     "test": "mocha ./test/test*.js --reporter spec",
     "test-coverage": "istanbul cover ./node_modules/.bin/_mocha -- test/test.js test/test-ratelimit.js --reporter spec",
