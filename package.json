@@ -21,15 +21,16 @@
   ],
   "main": "./lib/cors-anywhere.js",
   "files": [
-    "lib/",
+    "api/lib/",
     "test/",
     "Procfile",
     "demo.html",
-    "server.js"
+    "api/server.js"
   ],
   "dependencies": {
     "http-proxy": "1.11.1",
-    "proxy-from-env": "0.0.1"
+    "proxy-from-env": "0.0.1",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
     "coveralls": "^2.11.6",
@@ -38,12 +39,15 @@
     "lolex": "^1.5.0",
     "mocha": "^3.4.2",
     "nock": "^8.2.1",
+    "serverless-offline": "^14.3.4",
     "supertest": "^2.0.1"
   },
   "scripts": {
     "lint": "eslint .",
     "test": "mocha ./test/test*.js --reporter spec",
-    "test-coverage": "istanbul cover ./node_modules/.bin/_mocha -- test/test.js test/test-ratelimit.js --reporter spec"
+    "test-coverage": "istanbul cover ./node_modules/.bin/_mocha -- test/test.js test/test-ratelimit.js --reporter spec",
+    "dev": "node ./server.js",
+    "serverless": "serverless offline"
   },
   "engines": {
     "node": ">=0.10.0"

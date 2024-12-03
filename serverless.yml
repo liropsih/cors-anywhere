@@ -1,0 +1,18 @@
+service: cors-anywhere-serverless
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+
+functions:
+  proxyRequest:
+    handler: api/handler.proxy
+    events:
+      - http:
+          path: /{proxy+}
+          method: any
+          cors: true
+
+plugins:
+  - serverless-offline
